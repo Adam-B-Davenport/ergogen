@@ -63,7 +63,7 @@ points:
         inner:
           spread: cx
           key:
-            column_net: P7
+            column_net: P5
     thumb:
       anchor:
         ref: matrix_middle_bottom
@@ -84,7 +84,7 @@ points:
         right:
           spread: cx
           key:
-            column_net: P7
+            column_net: P5
 
 outlines:
   exports:
@@ -126,7 +126,7 @@ outlines:
           - ref: thumb_right_home
             shift: [0.5 cx +1.5, 0.5 cy]
           - ref: matrix_inner_bottom
-            shift: [1.5 cx +5, -0.5 cy +1.5]
+            shift: [1.5 cx +4.9, -0.5 cy +1.5]
           - ref: matrix_index_bottom
             shift: [-0.5 cx, -0.5 cy]
           - ref: thumb_right_home
@@ -158,11 +158,25 @@ pcbs:
           rotate: -90
         params:
           orientation: down
+      gnd_via:
+        type: via
+        anchor:
+          ref: matrix_inner_home
+          shift: [20.5 -2, -cy + 4]
+        nets:
+          net: GND
+      raw_via:
+        type: via
+        anchor:
+          ref: matrix_inner_home
+          shift: [20.5 +2, -cy + 4]
+        nets:
+          net: RAW
       pcm12:
         type: pcm12
         anchor:
           ref: matrix_inner_home
-          shift: [28.0, -cy]
+          shift: [28.0, -cy - 3]
           rotate: 90
         nets:
           from: pos  
