@@ -115,11 +115,11 @@ outlines:
           - ref: matrix_index_bottom
             shift: [0.5 cx, -0.5 cy]
           - ref: thumb_left_home
-            shift: [0.5 cx, -0.5 cy]
+            shift: [-0.5 cx - 1.4, 0.5 cy]
           - ref: matrix_middle_bottom
-            shift: [-0.5cx, -0.5 cy]
+            shift: [0.5cx, -0.5 cy]
           - ref: matrix_middle_bottom
-            shift: [cx - 1.5, -0.5 cy] 
+            shift: [cx , -0.5 cy] 
       # right thumb glue
       - type: polygon
         points:
@@ -158,3 +158,33 @@ pcbs:
           rotate: -90
         params:
           orientation: down
+      pcm12:
+        type: pcm12
+        anchor:
+          ref: matrix_inner_home
+          shift: [28.0, -cy]
+          rotate: 90
+        nets:
+          from: pos  
+          to: RAW
+        params:
+          reverse: true 
+      b3u1000p:
+        type: b3u1000p
+        nets:
+          r1: RST  
+          r2: GND
+        anchor:
+          ref: matrix_inner_home
+          shift: [20.5, -cy - 6]
+          rotate: 0
+        params:
+          reverse: true 
+      bat:
+        type: bat
+        nets: 
+          neg: GND
+        anchor:
+          ref: matrix_inner_home
+          shift: [20.5, -cy]
+          rotate: 90
