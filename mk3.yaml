@@ -101,7 +101,7 @@ outlines:
       - type: polygon
         points:
           - ref: matrix_pinkie_top
-            shift: [0.5 cx, +0.5 cy]
+            shift: [0.5 cx + 1.4, +0.5 cy +1.4]
           - ref: matrix_ring_top
             shift: [-0.5 cx, +0.5 cy]
           - ref: matrix_ring_bottom
