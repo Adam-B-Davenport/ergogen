@@ -20,10 +20,10 @@ points:
           diode:
             type: diode
             anchor:
-              shift: [0, -cx / 2 + 2]
+              shift: [0, -cx / 2 + 5]
               rotate: 180
             nets:
-              from: =colrow
+              from: =row_net
               to: =row_net
             params:
               tht: true
@@ -52,12 +52,12 @@ points:
             column_net: P8
         middle:
           spread: cx + 2
-          stagger: 5
+          stagger: 7.5
           key:
             column_net: P7
         index:
           spread: cx + 2
-          stagger: -6
+          stagger: -8.5
           key:
             column_net: P6
         inner:
@@ -67,7 +67,7 @@ points:
     thumb:
       anchor:
         ref: matrix_middle_bottom
-        shift: [0,-cx - 5]
+        shift: [0,-cx - 7.5]
         rotate: -10
       rows:
         home:
@@ -158,18 +158,25 @@ pcbs:
           rotate: -90
         params:
           orientation: down
+      rst_via:
+        type: via
+        anchor:
+          ref: matrix_inner_home
+          shift: [20.5 -3, -cy + 4]
+        nets:
+          net: RST
       gnd_via:
         type: via
         anchor:
           ref: matrix_inner_home
-          shift: [20.5 -2, -cy + 4]
+          shift: [20.5, -cy + 4]
         nets:
           net: GND
       raw_via:
         type: via
         anchor:
           ref: matrix_inner_home
-          shift: [20.5 +2, -cy + 4]
+          shift: [20.5 + 3, -cy + 4]
         nets:
           net: RAW
       pcm12:
